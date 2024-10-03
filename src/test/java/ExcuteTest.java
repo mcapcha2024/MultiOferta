@@ -17,22 +17,22 @@ public class ExcuteTest {
         String url = "https://tiendaonline.movistar.com.pe/ofertas/movil/multioferta";
         String celular = "999999999";
         String dni = "99999999";
-        String horario = "2024-08-22 10:00:00"; //Se debe actualizar la fecha
+        String horario = "2024-10-03 10:00:00"; //Se debe actualizar la fecha
 
-        // Popup 20% DTO
+        // Popup 20% DTO - NO HABILITADO
         webSite.navigateToWebsite(url);
-        webSite.validate20DTO("https://centrodetransparencia.movistar.com.pe/politica-local-privacidad", "POPUP 20% DTO"); // Replace with the link URL
-        webSite.selectLegal20DTO();
-        webSite.inputFormulatio20DTO(celular, dni);
-        WebSite.selectHorario20DTO(horario);
-        webSite.submitPedido20DTO();
-        String mensaje20DTO = webSite.validatePedido20STO();
-        if (mensaje20DTO.equals("¡Gracias por contactarnos!")) {
-            System.out.println("Prueba exitosa: Se verificó el mensaje de confirmación M20%");
-        } else {
-            System.out.println("Prueba fallida: El mensaje de confirmación no es el esperado");
-        }
-        webSite.closeModal20DTO();
+//        webSite.validate20DTO("https://centrodetransparencia.movistar.com.pe/politica-local-privacidad", "POPUP 20% DTO"); // Replace with the link URL
+//        webSite.selectLegal20DTO();
+//        webSite.inputFormulatio20DTO(celular, dni);
+//        WebSite.selectHorario20DTO(horario);
+//        webSite.submitPedido20DTO();
+//        String mensaje20DTO = webSite.validatePedido20STO();
+//        if (mensaje20DTO.equals("¡Gracias por contactarnos!")) {
+//            System.out.println("Prueba exitosa: Se verificó el mensaje de confirmación M20%");
+//        } else {
+//            System.out.println("Prueba fallida: El mensaje de confirmación no es el esperado");
+//        }
+//        webSite.closeModal20DTO();
 
         // Popup DELIVERY
         webSite.validateTerminosDelivery("https://www.movistar.com.pe/movil/postpago/portabilidad?utm_source=%28direct%29&amp;utm_medium=%28none%29&amp;utm_campaign=%28direct%29&amp;utm_content=undefined&amp;utm_term=undefined&amp;gclid=&amp;_gl=1*14w1h6w*_gcl_au*MTYxOTMzODg0OS4xNzIxMjM3NzA5*_ga*NDkzMTU1NjI0LjE3MjEyMzc3MDk.*_ga_8Q7MD06RY0*MTcyMTMzMTE0MS43LjEuMTcyMTMzMTE2Ni4zNS4wLjA.#portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_jb7ddqEUWB7j", "POPUP DELIVERY"); // Replace with the link URL
@@ -194,7 +194,7 @@ public class ExcuteTest {
         webSite.desplegarTerminos();
         webSite.scrollByPixels(Locators.scrollAmount);
         String mensajeLegal = webSite.validarVencimiento();
-        if (mensajeLegal.equals("Promoción válida desde el 01/08/2024 hasta el 31/08/2024 para clientes residenciales y Negocios (solo RUC 10). El beneficio consiste en un incremento de GB del plan Adicional S/ 39.90 a 120GB en alta velocidad (bono de 95GB en alta velocidad adicionales a los 25GB de la bolsa del plan).")) {
+        if (mensajeLegal.equals("Promoción válida desde el 01/10/2024 hasta el 31/10/2024 para clientes residenciales y Negocios (solo RUC 10). El beneficio consiste en un incremento de GB del plan Adicional S/ 39.90 a 120GB en alta velocidad (bono de 95GB en alta velocidad adicionales a los 25GB de la bolsa del plan).")) {
             System.out.println("Prueba exitosa: Se verificó el VENCIMIENTO LEGAL");
         } else {
             System.err.println("Prueba fallida: El legal esta vencido");
